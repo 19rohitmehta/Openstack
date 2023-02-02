@@ -1,0 +1,13 @@
+#MBSS Director
+#TC1 - Minimum Password Length
+#https://ostechnix.com/how-to-set-password-policies-in-linux/#:~:text=As%20per%20the%20above%20setting%2C%20the%20password%20must%20have%20at,digit%2C%20and%20one%20other%20characters.
+grep "^minlen" /etc/security/pwquality.conf
+grep "^lcredit" /etc/security/pwquality.conf
+grep "^ucredit" /etc/security/pwquality.conf
+grep "^dcredit" /etc/security/pwquality.conf
+grep "^ocredit" /etc/security/pwquality.conf
+
+#TC2 - Password Age
+grep  PASS_MAX_DAYS /etc/login.defs
+
+

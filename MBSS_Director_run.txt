@@ -1,0 +1,17 @@
+#MBSS Director
+#TC1 - Minimum password length must be 8 characters
+authconfig --passminlen=8 --update
+authconfig --enablereqlower --update
+authconfig --enablerequpper --update
+authconfig --enablereqdigit --update
+authconfig --enablereqother --update
+
+#TC2 - Maximum password age (password expiry) - 60 days
+sudo sed -i 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS  60/' /etc/login.defs
+
+#TC3 - Password history - Last 6 passwords
+sed -i 's/^password    sufficient.*/& remember=6/' /etc/pam.d/system-auth
+
+
+
+
